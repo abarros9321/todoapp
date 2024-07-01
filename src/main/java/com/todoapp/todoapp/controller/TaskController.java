@@ -3,7 +3,6 @@ package com.todoapp.todoapp.controller;
 import com.todoapp.todoapp.persistence.entity.Task;
 import com.todoapp.todoapp.persistence.entity.TaskStatus;
 import com.todoapp.todoapp.service.TaskService;
-import com.todoapp.todoapp.service.TaskServiceImpl;
 import com.todoapp.todoapp.service.dto.TaskInDto;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;

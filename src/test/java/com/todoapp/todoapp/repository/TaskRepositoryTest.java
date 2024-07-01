@@ -77,7 +77,7 @@ public class TaskRepositoryTest {
         //given
         repository.save(task);
         //when
-        Task taskSave = repository.findById(task.getId()).get();
+        Task taskSave = repository.findById(task.getId()).orElse(null);
         //then
         Assertions.assertThat(taskSave).isNotNull();
         Assertions.assertThat(taskSave.getTitle()).isEqualTo(task.getTitle());
@@ -89,7 +89,8 @@ public class TaskRepositoryTest {
         //given
         repository.save(task);
         //when
-        Task taskActualizar = repository.findById(task.getId()).get();
+        Task taskActualizar = repository.findById(task.getId()).orElse(null);
+        assert taskActualizar != null;
         taskActualizar.setTitle("TITLE2");
         taskActualizar.setDescription("desc2");
 

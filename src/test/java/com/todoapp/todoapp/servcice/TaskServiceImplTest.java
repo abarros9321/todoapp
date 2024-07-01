@@ -1,6 +1,6 @@
 package com.todoapp.todoapp.servcice;
 
-import com.todoapp.todoapp.exceptions.ToDoExceptions;
+
 import com.todoapp.todoapp.mapper.TaskInDtoToTask;
 import com.todoapp.todoapp.persistence.entity.Task;
 import com.todoapp.todoapp.persistence.entity.TaskStatus;
@@ -23,8 +23,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.willDoNothing;
 import static org.mockito.Mockito.verify;
 
