@@ -3,17 +3,19 @@ package com.todoapp.todoapp.controller;
 import com.todoapp.todoapp.persistence.entity.Task;
 import com.todoapp.todoapp.persistence.entity.TaskStatus;
 import com.todoapp.todoapp.service.TaskService;
+import com.todoapp.todoapp.service.TaskServiceImpl;
 import com.todoapp.todoapp.service.dto.TaskInDto;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.http.HttpResponse;
 import java.util.List;
 
 @RestController
 @RequestMapping("/tasks")
 public class TaskController {
 
+    @Qualifier("TaskServiceImpl")
     private final TaskService taskService;
 
     public TaskController(TaskService taskService) {
@@ -43,7 +45,7 @@ public class TaskController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable("id") Long id){
-        this.taskService.DeleteById(id);
+        this.taskService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 
